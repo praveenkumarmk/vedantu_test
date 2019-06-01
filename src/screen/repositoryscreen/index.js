@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { View, Text,FlatList,StyleSheet,ActivityIndicator } from 'react-native';
+import { View, Text,FlatList,StyleSheet,ActivityIndicator,Image } from 'react-native';
 import CustomHeader from '../component/CustomHeader';
 import {getRepositories} from '../component/ApiAction';
 import color from '../component/color'
-
+const icon_star = require("../../assets/image/icon_star.png");
+const extractKey = ({id}) => id
 class RepositoryScreen extends Component {
   constructor(props) {
     super(props);
@@ -11,6 +12,17 @@ class RepositoryScreen extends Component {
       repositoryData: [],
       refreshing: false,
     }
+  }
+  renderItem = ({item}) => {
+    alert(item+" name"+item.name)
+    return (
+      <View>
+      <Text style={styles.item}>
+        {item.name}
+      </Text>
+      <Image source={icon_star}/>
+      </View>
+    )
   }
   componentDidMount() {
     this.setState({ refreshing: true });
@@ -37,7 +49,8 @@ class RepositoryScreen extends Component {
         <View style={styles.container}>
         <FlatList
           data={this.state.repositoryData}
-          renderItem={({item}) => <Text>{item.language}</Text>}
+          renderItem={this.renderItem}
+          keyExtractor={extractKey}
         />
         </View>
         {this.state.refreshing && <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} >
@@ -57,6 +70,8 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     height: 44,
+    color:color.gray600,
+    backgroundColor: 'skyblue',
   },
 })
 export default RepositoryScreen;
