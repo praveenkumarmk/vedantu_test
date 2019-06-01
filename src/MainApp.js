@@ -8,10 +8,11 @@ import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 const AppNavigator = createStackNavigator(
   {
+    Repository: { screen: RepositoryScreen },
     Main: { screen: MainScreen },
     OverView: { screen: OverviewScreen },
     Star: { screen: StarScreen },
-    Repository: { screen: RepositoryScreen }
+   
   },
   {
     //index: 0,

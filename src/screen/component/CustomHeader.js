@@ -14,7 +14,7 @@ const CustomHeader = ({ onPress, onSearchPress,onOverViewPress,onRepositoriesPre
           <Image source={icon_menu} style={{ height: 30, width: 30 }} />
         </TouchableOpacity>
         <View style={{ alignItems: "flex-end", justifyContent: 'center', flexDirection: 'row' }} >
-          <Image source={icon_cat_profile} style={{ height: 30, width: 30 }} />
+          <Image source={icon_cat_profile} />
         </View>
         <TouchableOpacity onPress={onSearchPress} style={{ alignItems: "flex-end", justifyContent: 'center', marginBottom: 5, padding: 10 }} >
           <Image source={icon_search} style={{ height: 30, width: 30 }} />
