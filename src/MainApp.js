@@ -15,7 +15,7 @@ const AppNavigator = createStackNavigator(
   },
   {
     //index: 0,
-    initialRouteName: "Main",
+    initialRouteName: "Repository",
     headerMode: "none",
     navigationOptions: {
       gesturesEnabled: false
