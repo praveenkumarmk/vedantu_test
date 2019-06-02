@@ -16,21 +16,21 @@ class RepositoryScreen extends Component {
   renderItem = ({ item }) => {
     return (
       <View style={styles.item}>
-        <Text style={{ color: color.primaryColour,fontSize:20,margin:5 }}>
+        <Text style={{ color: color.primaryColour, fontSize: 20, margin: 5 }}>
           {item.full_name}
         </Text>
-        <Text style={{ color: color.gray600,margin:5 }}>
+        <Text style={{ color: color.gray600, margin: 5 }}>
           {item.description}
         </Text>
-        <View style={{flexDirection:"row",margin:5}}>
-        <Image source={icon_star} style={{marginRight:5}}/>
-        <Text style={{ color: color.gray600 ,marginRight:5}}>
-          {item.forks_count}
-        </Text>
-        <View style={styles.CircleShapeView}></View>
-        <Text style={{ color: color.gray600,marginRight:5 }}>
-          {item.language}
-        </Text>
+        <View style={{ flexDirection: "row", margin: 5 }}>
+          <Image source={icon_star} style={{ marginRight: 5 }} />
+          <Text style={{ color: color.gray600, marginRight: 5 }}>
+            {item.forks_count}
+          </Text>
+          <View style={styles.CircleShapeView}></View>
+          <Text style={{ color: color.gray600, marginRight: 5 }}>
+            {item.language}
+          </Text>
         </View>
       </View>
     )
@@ -55,7 +55,7 @@ class RepositoryScreen extends Component {
           onOverViewPress={() => this.props.navigation.navigate('OverView')}
           onRepositoriesPress={() => this.props.navigation.navigate('Repository')}
           onStarPress={() => this.props.navigation.navigate('Star')}
-
+          isRepositoryClicked={true}
         />
         <FlatList
           data={this.state.repositoryData}
@@ -80,15 +80,15 @@ const styles = StyleSheet.create({
   CircleShapeView: {
     width: 20,
     height: 20,
-    borderRadius: 20/2,
+    borderRadius: 20 / 2,
     backgroundColor: color.yellow500,
-    marginRight:5
-},
+    marginRight: 5
+  },
   item: {
     padding: 3,
     color: color.gray600,
-    borderWidth: 1/2,
-    height:120,
+    borderWidth: 1 / 2,
+    height: 120,
     borderColor: color.lightgray
 
   },

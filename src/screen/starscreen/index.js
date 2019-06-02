@@ -14,7 +14,7 @@ class StarScreen extends Component {
           onOverViewPress={()=>this.props.navigation.navigate('OverView')}
           onRepositoriesPress={()=>this.props.navigation.navigate('Repository')}
           onStarPress={()=>this.props.navigation.navigate('Star')}
-
+          isStarClicked={true}
         />
        <View style={{alignItems:"center"}}>
        <Text >StarScreen</Text>

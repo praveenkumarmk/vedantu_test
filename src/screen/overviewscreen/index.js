@@ -15,6 +15,7 @@ class OverViewScreen extends Component {
           onOverViewPress={()=>this.props.navigation.navigate('OverView')}
           onRepositoriesPress={()=>this.props.navigation.navigate('Repository')}
           onStarPress={()=>this.props.navigation.navigate('Star')}
+          isOverViewClicked={true}
 
         />
        <View style={{alignItems:"center"}}>
